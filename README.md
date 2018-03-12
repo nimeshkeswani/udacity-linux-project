@@ -1,19 +1,33 @@
 Server's Public IP Address: 34.213.193.22
+
 SSH Port: 2200
 
 Application URL: http://34.213.193.22/
 
+Required Packages:
+
+01. apache2
+02. libapache2-mod-wsgi
+03. postgresql
+04. python-sqlalchemy
+05. python-itsdangerous
+06. python-psycopg2
+07. python-flask
+08. python-oauth2client
+09. python-requests
+10. python-flask-httpauth
+
 Summary of Steps Taken to get the App running on a Linux Server:
 
-1. Updated all package source lists.
-2. Updated all packages.
-3. Configured Lightsail firewall to only accept connections on Ports 80, 123 and 2200.
-4. Configured and Enabled UFW to only allow connections on Ports 80, 123 and 2200.
-5. Modified the /etc/ssh/sshd_config file to run SSH on Port 2200 instead of 22.
-6. Created a new user name grader.
-7. Created a file in /etc/sudoers.d to provide user grader sudo access.
-8. Created an ssh key pair on local machine got user grader.
-9. Created a .ssh folder at /home/grader/
+01. Updated all package source lists.
+02. Updated all packages.
+03. Configured Lightsail firewall to only accept connections on Ports 80, 123 and 2200.
+04. Configured and Enabled UFW to only allow connections on Ports 80, 123 and 2200.
+05. Modified the /etc/ssh/sshd_config file to run SSH on Port 2200 instead of 22.
+06. Created a new user name grader.
+07. Created a file in /etc/sudoers.d to provide user grader sudo access.
+08. Created an ssh key pair on local machine got user grader.
+09. Created a .ssh folder at /home/grader/
 10. Created a file authorized_keys at /home/grader/.ssh and save the generated public key value in the file.
 11. Disabled Password based SSH login by setting the PasswordAuthentication setting in the /etc/ssh/sshd_config file to no.
 12. Disabled remote root login by setting the PermitRootLogin setting in the /etc/ssh/sshd_config file to no.
